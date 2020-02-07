@@ -2,7 +2,7 @@
 
 FileDozer is a simply utility which allows users to search and process files through the command line. It is designed around Perl and its core modules only. No external dependencies are required, making this a lightweight and mobile solution.
 
-The design goal behind FileDozer was to create an elegant, portable, and efficient file searching tool that extended beyond the capabilities of built-in Linux utilities such as **find** or **locate**. Additionally, it's an effective tool to use on Windows, where the built-in file searching tools are abysmal.
+The design goal behind FileDozer was to create an elegant, portable, and efficient file searching tool as an alternate solution to built-in Linux utilities such as **find** or **locate** when dealing with certain file searches. Additionally, FileDozer is an effective tool to use on Windows, where the built-in file searching tools are abysmal.
 
 FileDozer depends upon the core module [**File::Find**](https://perldoc.perl.org/File/Find.html) for file searching operations.
 
@@ -22,7 +22,7 @@ Options:
    -m, --match           Perl Compatible Regular Expression (PCRE) to match files in search. Multiple parameters supported.
    -f, --filter          Perl Compatible Regular Expression (PCRE) to filter out files in search. Multiple parameters supported.
    -e, --exec            System command to run on each file located in search. Multiple parameters supported.
-   -d, --dir             Directory to utilize recursively in search. Defaults to working directory. Multiple parameters supported.
+   -d, --dir             Directory to search recursively. Defaults to working directory. Multiple parameters supported.
    -n, --nocase          Case insensitive search will be performed.
    -q, --quiet           Do not prompt before executing commands on each file. Use at your own risk!
    -h, --help            Show this help screen.
