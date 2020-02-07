@@ -22,7 +22,7 @@ Options:
    -m, --match           Perl Compatible Regular Expression (PCRE) to match files in search. Multiple parameters supported.
    -f, --filter          Perl Compatible Regular Expression (PCRE) to filter out files in search. Multiple parameters supported.
    -e, --exec            System command to run on each file located in search. Multiple parameters supported.
-   -d, --dir             Parent directory to utilize in search. Subdirectories will be searched recursively. Multiple parameters supported.
+   -d, --dir             Directory to utilize recursively in search. Defaults to working directory. Multiple parameters supported.
    -n, --nocase          Case insensitive search will be performed.
    -q, --quiet           Do not prompt before executing commands on each file. Use at your own risk!
    -h, --help            Show this help screen.
