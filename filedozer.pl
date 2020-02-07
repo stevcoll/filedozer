@@ -23,12 +23,13 @@ GetOptions(
   'm|match=s' => \my @matches,
   'f|filter=s' => \my @filters,
   'e|exec=s' => \my @commands,
-  'd|dir=s' => \(my @dirs = (cwd)),  ## Default to present working directory
+  'd|dir=s' => \my @dirs,
   'n|nocase' => \my $nocase,
   'q|quiet' => \my $quiet,
 ) or help();
 
 help() unless @matches;
+$dirs[0] = cwd unless @dirs;
 
 foreach my $dir (@dirs) {
   find(\&process, $dir);
@@ -69,23 +70,23 @@ sub process {
 }
 
 sub help {
-print 'FileDozer - Perl File Finder and Command Processor
+print 'FileDozer - Perl File Finder and Processor | Steve Collmann - stevcoll@gmail.com
 
 Options:
    -m, --match           Perl Compatible Regular Expression (PCRE) to match files in search. Multiple parameters supported.
    -f, --filter          Perl Compatible Regular Expression (PCRE) to filter out files in search. Multiple parameters supported.
    -e, --exec            System command to run on each file located in search. Multiple parameters supported.
-   -d, --dir             Parent directory to utilize in search. Subdirectories will be searched recursively. Multiple parameters supported.
+   -d, --dir             Directory to utilize recursively in search. Defaults to working directory. Multiple parameters supported.
    -n, --nocase          Case insensitive search will be performed.
    -q, --quiet           Do not prompt before executing commands on each file. Use at your own risk!
    -h, --help            Show this help screen.
    
 Examples:
-   ./filedozer.pl -m nmap                                  ## Path search using fixed string and present working directory as root.
-   ./filedozer.pl -m "msfconsole\$"                        ## File search utilizing regex to match "metasploit" at the end of line.
-   ./filedozer.pl -m backup -m "\.gz\$" -d /               ## File search for "backup" string AND ".gz" extension. Specify starting directory.
-   ./filedozer.pl -m "log.*apache" -f "tar\.gz\$"          ## Alternative combined search using regex. Filter out any "tar.gz" extensions.
-   ./filedozer.pl -m "\.(txt|conf)\$" -e cat -d /var/log   ## File search for ".gz" extension. Run command "zcat" on all files found.
+   ./filedozer.pl -m nmap                                 ## Path search using fixed string and present working directory as root.
+   ./filedozer.pl -m "msfconsole$"                        ## File search utilizing regex to match "metasploit" at the end of line.
+   ./filedozer.pl -m backup -m "\.gz$" -d /               ## File search for "backup" string AND ".gz" extension. Specify starting directory.
+   ./filedozer.pl -m "log.*apache" -f "tar\.gz$"          ## Alternative combined search using regex. Filter out any "tar.gz" extensions.
+   ./filedozer.pl -m "\.(txt|conf)$" -e cat -d /var/log   ## File search for ".gz" extension. Run command "zcat" on all files found.
 
 Notes:
    - Any part of the absolute file path can be matched with an expression. Utilize regex boundaries in order to preent this.
