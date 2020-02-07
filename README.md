@@ -16,7 +16,7 @@ FileDozer depends upon the core module File::Find for file searching operations.
 
 ## Help
 ```
-FileDozer - Perl File Finder and Command Processor
+FileDozer - Perl File Finder and Processor | Steve Collmann - stevcoll@gmail.com
 
 Options:
    -m, --match           Perl Compatible Regular Expression (PCRE) to match files in search. Multiple parameters supported.
@@ -41,3 +41,6 @@ Notes:
    - Exec option supports multiple parameters; ALL commands will be run on each file matched.
    - Dir option supports multiple parameters; ALL directories will be processed for matching files.
 ```
+
+## Author
+Steve Collmann, stevcoll@gmail.com
