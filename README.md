@@ -28,11 +28,11 @@ Options:
    -h, --help            Show this help screen.
    
 Examples:
-   ./filedozer.pl -m nmap                                  ## Path search using fixed string and present working directory as root.
-   ./filedozer.pl -m "msfconsole\$"                        ## File search utilizing regex to match "metasploit" at the end of line.
-   ./filedozer.pl -m backup -m "\.gz\$" -d /               ## File search for "backup" string AND ".gz" extension. Specify starting directory.
-   ./filedozer.pl -m "log.*apache" -f "tar\.gz\$"          ## Alternative combined search using regex. Filter out any "tar.gz" extensions.
-   ./filedozer.pl -m "\.(txt|conf)\$" -e cat -d /var/log   ## File search for ".gz" extension. Run command "zcat" on all files found.
+   ./filedozer.pl -m nmap                                 ## Path search using fixed string and present working directory as root.
+   ./filedozer.pl -m "msfconsole$"                        ## File search utilizing regex to match "metasploit" at the end of line.
+   ./filedozer.pl -m backup -m "\.gz$" -d /               ## File search for "backup" string AND ".gz" extension. Specify starting directory.
+   ./filedozer.pl -m "log.*apache" -f "tar\.gz$"          ## Alternative combined search using regex. Filter out any "tar.gz" extensions.
+   ./filedozer.pl -m "\.(txt|conf)$" -e cat -d /var/log   ## File search for ".gz" extension. Run command "zcat" on all files found.
 
 Notes:
    - Any part of the absolute file path can be matched with an expression. Utilize regex boundaries in order to preent this.
@@ -40,6 +40,7 @@ Notes:
    - Filter option supports multiple parameters; ANY condition met will negate the possibility of a file match.
    - Exec option supports multiple parameters; ALL commands will be run on each file matched.
    - Dir option supports multiple parameters; ALL directories will be processed for matching files.
+
 ```
 
 ## Author
