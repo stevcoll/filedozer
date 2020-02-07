@@ -95,5 +95,5 @@ Notes:
    - Exec option supports multiple parameters; ALL commands will be run on each file matched.
    - Dir option supports multiple parameters; ALL directories will be processed for matching files.
 ';
-  exit;
+exit;
 }
