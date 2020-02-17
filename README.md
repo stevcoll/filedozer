@@ -1,6 +1,6 @@
 # FileDozer
 
-FileDozer is a simply utility which allows users to search and process files through the command line. It is designed around Perl and its core modules only. No external dependencies are required, making this a lightweight and mobile solution.
+FileDozer is a simple utility which allows users to search and process files through the command line. It is designed around Perl and its core modules only. No external dependencies are required, making this a lightweight and mobile solution.
 
 The design goal behind FileDozer was to create an elegant, portable, and efficient file searching tool as an alternate solution to built-in Linux utilities such as **find** or **locate** when dealing with certain file searches. Additionally, FileDozer is an effective tool to use on Windows, where the built-in file searching tools are abysmal.
 
