@@ -63,7 +63,7 @@ sub process {
       chomp $execute;
       next unless $execute eq 'Y' || $execute eq 'y';
     }
-    system($command . " " . $file);
+    system($command . " " . "\"$file\"");
     print "\n";
   }
   print $file . "\n" unless @commands;
