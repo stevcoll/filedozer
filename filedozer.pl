@@ -56,7 +56,7 @@ sub process {
   }
 
   foreach my $command (@commands) {
-    print BOLD RED $command . " " . $file, RESET, "\n";
+    print BOLD RED $command . " " . "\"$file\"", RESET, "\n";
     unless ($quiet) {
       print "\nExecute Command? [y/N] ";
       my $execute = <STDIN>;
